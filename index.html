@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Climate Now</title>
+
+    <script src="email.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("DY2pvlBkXZ0Frn6b5");
+      })();
+    </script>
+</head>
+
+<body>
+
+
+    <div class="nav-bar">
+        <div class="back-btn">Air Quality Monitor</div>
+        <!-- <div class="back-btn"><img src="Logo Climate_Now.jpg" alt="" width="200" height="35" style="border-radius: 5px; margin-left: 15px;"></div> -->
+        <h2 class="heading"></h2>
+        <button class="adButton" type="submit" onclick="othersDev()">See Others Locations</button>
+    </div>
+
+
+    
+        <!-- <input id="submit" type="button" onclick="openForm()" value="ADD DEVICE"> -->
+        <!-- <div class="screen">
+            <div id="main"></div>
+        </div> -->
+        
+
+
+    <div class="main-screen">
+        <div class="left historic">
+            <div class="card">
+                <div class="heading">
+                    <div id="time"></div>
+                    <div id="date"></div>
+                </div>
+                <hr>
+                <div class="upper-val">
+                    <div class="val">
+                        <div class="val-sec">
+
+                            <div id="co"></div>
+                            <p>SMOKE</p>
+                        </div>
+                        <hr>
+                        <div class="val-sec">
+                            
+                            <div id="smoke"></div>
+                            <p>CO</p>
+                        </div>
+    
+                    </div>
+                </div>
+                <hr>
+                <div class="active-status">
+                    <div class="status-container">
+                        <div id="status-circle" class="status-circle"></div>
+                        <div id="active"></div>
+                    </div>
+                </div>
+                <div class="report">
+                    <input
+                    type="email"
+                    class="report-email"
+                    id="email"
+                    placeholder="Enter email"
+                  />
+                  <button class="report-btn" onclick="sendMail()">Send Report</button>
+               </div>
+           
+            </div>
+            
+        </div>
+        <div class="right current">
+            <div class="data-table">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Date & Time</th>
+                            <th>SMOKE(PPM)</th>
+                            <th>CO(PPM)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="d-tbl">   
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+<!-- Report email sent section -->
+
+
+
+    <!-- <div class="data-table">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Date & Time</th>
+                    <th>FIELD</th>
+                    <th>VALUE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+                    <td>03/01/2023 16:44:54</td>
+                    <td>Dom</td>
+                    <td>6000</td>
+                </tr>
+                <tr >
+                    <td>03/01/2023 16:44:54</td>
+                    <td>Dom</td>
+                    <td>6000</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div> -->
+
+    <!-- <div class="graph">
+        <canvas id="chartJSContainer" width="600" height="400"></canvas>
+    </div> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

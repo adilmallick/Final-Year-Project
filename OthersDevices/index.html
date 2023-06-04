@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Climate Now</title>
+</head>
+
+<body>
+
+
+    <div class="nav-bar">
+        <div class="back-btn">Air Quality Monitor</div>
+        <h2 class="heading"></h2>
+        <button class="adButton" type="submit" onclick="openForm()">ADD LOCATION</button>
+    </div>
+
+    <div class="main-screen">
+
+    <div class="dev-list">
+        <div class="d-list">
+            <h2 class="heading">Location List</h2>
+        </div>
+
+    </div>
+
+    <!-- <input id="submit" type="button" onclick="openForm()" value="ADD DEVICE"> -->
+    <div class="screen">
+        <div id="main"></div>
+    </div>
+    
+    <div id="modal">
+        <div class="form-popup form-popup-on" id="myForm">
+            <div class="form-container">
+              <h2 style="margin-top: 10px;">Add Location</h2>
+              <div class="input-container">
+                <input id="dev-name" type="text" placeholder="Location Name">
+                <input id="latitude" type="text" placeholder="Latitude" required>
+                <input id="longitude" type="text" placeholder="Longitude" required>
+               
+              </div>   
+    
+              <div class="save-button">
+                <button type="submit" class="btn" onclick="input()">Save</button>
+                <button id="cancelbtn" type="button" class="btn cancel" onclick="formclose()">Cancel</button>
+              </div>             
+            </div>
+          </div>
+    </div>
+    </div>
+    <!-- <div class="area-container">
+        <div class="location-heading">
+            <div class="heading">
+                <H1>ADIL</H1>
+            </div>
+            <div class="delete">
+                <i onclick="dDelete('${cDevice}')" class="fa fa-times deletebtn" aria-hidden="true"></i>
+            </div>
+        </div>
+        
+        <div class="all-para">
+            <div class="box">
+                <div class="temp">
+                    <p id="temp-value"></p>
+                    <h3>Temperature</h3>
+                </div>
+                <div class="temp">
+                    <p id="humi-value"></p>
+                    <h3>Humidity</h3>
+                </div>
+            </div>
+        <div class="parameter">
+
+            <div class="left-parameter">
+
+
+
+                <div class="para-element">
+                    <h2 class="para">CO</h2>
+                    <div class="values">
+                        <div class="value" id="co-value">3555</div>
+                        <div class="indicator"></div>
+                    </div>
+                </div>
+
+                <div class="para-element">
+                    <h2 class="para" >NO</h2>
+                    <div class="values">
+                        <div class="value" id="no-value"> 3555</div>
+                        <div class="indicator"></div>
+                    </div>
+                </div>
+
+                <div class="para-element">
+                    <h2 class="para" >NO2</h2>
+                    <div class="values">
+                        <div class="value" id="no2-value">3555</div>
+                        <div class="indicator"></div>
+                    </div>
+                </div>
+
+                <div class="para-element">
+                    <h2 class="para" >O3</h2>
+                    <div class="values">
+                        <div class="value" id="o3-value">3555</div>
+                        <div class="indicator"></div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="right-parameter">
+
+                <div class="para-element">
+                    <h2 class="para">PM2.5</h2>
+                    <div class="values">
+                        <div class="value" id="pm25-value">3555</div>
+                        <div class="indicator"></div>
+                    </div>
+                </div>
+
+                <div class="para-element">
+                    <h2 class="para">PM10</h2>
+                    <div class="values">
+                        <div class="value" id="pm10-value">3555</div>
+                        <div class="indicator"></div>
+                    </div>
+                </div>
+
+                <div class="para-element">
+                    <h2 class="para">NH3</h2>
+                    <div class="values">
+                        <div class="value" id="nh3-value">3555</div>
+                        <div class="indicator"></div>
+                    </div>
+                </div>
+
+                <div class="para-element">
+                    <h2 class="para">SO2</h2>
+                    <div class="values">
+                        <div class="value" id="so2-value">3555</div>
+                        <div class="indicator"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <div class="recomendation">
+            <div class="desies-parameter">
+
+                <i id="t1199-heart" class="fas fa-heartbeat icons tooltip"> <span class="tooltiptext">Heart Patient</span></i>
+                <i id="t1199-sport" class="fas fa-running icons tooltip">  <span class="tooltiptext">Sports</span></i>
+                <i id="t1199-pregnent" class="fas fa-female icons tooltip"> <span class="tooltiptext">Pregnant</span></i>
+                <i id="t1199-kids" class="fas fa-child icons tooltip"> <span class="tooltiptext">Kids</span></i>
+                <i id="t1199-senior" class="fas fa-blind icons tooltip"> <span class="tooltiptext">Senior Citizen</span></i>
+                <i id="t1199-asthmatic" class="fas fa-lungs icons tooltip"><span class="tooltiptext">Asthmatic</span></i>
+                <i id="t1199-gpublic" class="fas fa-users icons tooltip"><span class="tooltiptext">General Public</span></i>
+            </div>
+            <P id="t1199-recomend-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi suscipit voluptate culpa.</P>
+        </div>
+    </div> -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>

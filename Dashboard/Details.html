@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="Details.css">
+    <script src="fabric.min.js"></script>
+    <script src="chart.js"></script>
+    <script src="gauge.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv='pragma' content='no-cache'> -->
+    <title>Dashboard</title>
+</head>
+<body id="container">       
+    <nav >
+        <div id="nav" class="nav-mobile">
+            <div class="nav-container">
+                <div class="back-btn"><img id="my-logo" src="../Logo Climate_Now.jpg" alt="" width="200" height="35" style="border-radius: 5px; margin-left: 15px;"></div>
+
+                <!-- <h3 id="dev-name" style="display: none;">TERRA1005</h3> -->
+                <div class="top-portion">
+                    <p id="greeting">Good Morning</p>
+                    <div id="scircle"></div>
+                    <p id="date">Thesday, Nov 9</p>
+                </div>  
+                <div class="checkbox">
+                    <span id="light">Light</span>
+                      <label class="switch"> 
+                        <input id="check" type="checkbox">
+                        <div class="slider"> </div> 
+                      </label>
+                    <span id="dark" >Dark</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="loca" >
+        <div class="loca-item">
+            <div id="refresh" onclick="goBack()"><i class="fas fa-arrow-left"></i></div>
+            <p id="location"></p>
+            <div></div>
+        </div>
+
+    </div>
+    
+
+<div class="data-container">
+    <div class="screen-container">
+        <div class="items forZ">
+            <div class="main-indicator margintop" id="indi-quality"></div>
+            <div class="rec quality">
+                <H3 id="quality"></H3>
+            </div>
+
+            <div class="heading">
+                
+                <H2 style="bottom: 0;">AIR QUALITY</H2>
+            </div>
+        </div>
+        <div class="items" id="co">
+            <div class="main-indicator" id="indi-co"></div>
+            <canvas id="can-co"></canvas>
+            <div class="value">
+                <h2 class="currentValue" id="current-co"></h2>
+                <h2 id="unit">PPM</h2>
+            </div>
+
+            <div class="can-heading">
+                <h2>CO</h2>
+            </div>
+            
+        </div>
+
+        <div class="items forZ" id="temp">
+            <div class="main-indicator additional" id="indi-temp"></div>
+            <div class="text-container tp">
+                <h1 id="temp-value" class="temp">0</h1>
+                <h2 id="tpara">°C</h2>
+            </div>
+
+            <div class="heading">
+                <H2>TEMPERATURE</H2>
+            </div>
+           
+        </div>
+        <div class="items" id="pm25">
+            <div class="main-indicator" id="indi-pm25"></div>
+            <canvas id="can-pm25"></canvas>
+            <div class="value">
+                <h2 class="currentValue" id="current-pm25"></h2>
+                <h2 id="unit">PPM</h2>
+            </div>
+            <div class="can-heading ">
+                <H2>PM2.5</H2>
+            </div>
+        </div>
+        <div class="items" id="pm10">
+            <div class="main-indicator" id="indi-pm10"></div>
+            <canvas id="can-pm10"></canvas>
+            <div class="value">
+                <h2 class="currentValue" id="current-pm10"></h2>
+                <h2 id="unit">PPM</h2>
+            </div>
+            <div class="can-heading">
+                <h2>PM10</h2>
+            </div>
+        </div>
+        <div class="items forZ">
+            <div class="rec">
+                <div id="rec-icon">
+                    <i id="heart" class="fas fa-heartbeat icons tooltip" > <span class="tooltiptext">Heart Patient</span></i>
+                    <i id="sport"  class="fas fa-running icons tooltip" >  <span class="tooltiptext">Sports</span></i>
+                    <i id="pregnent" class="fas fa-female icons tooltip"> <span class="tooltiptext">Pregnant</span></i>
+                    <i id="kids" class="fas fa-child icons tooltip"> <span class="tooltiptext">Kids</span></i>
+                    <i id="senior" class="fas fa-blind icons tooltip"> <span class="tooltiptext">Senior Citizen</span></i>
+                    <i id="asthmatic" class="fas fa-lungs icons tooltip"><span class="tooltiptext">Asthmatic</span></i>
+                    <i id="gpublic" class="fas fa-users icons tooltip"><span class="tooltiptext">General Public</span></i>
+                
+                </div>
+                <p id="recomendation"></p>
+            </div>
+            <div class="heading recTag">
+                <H2 style="bottom: 0;">RECOMENDATION</H2>
+            </div>
+        </div>
+        <div class="items " id="no">
+            <div class="main-indicator" id="indi-no"></div>
+            <canvas id="can-no"></canvas>
+            <div class="value">
+                <h2 class="currentValue" id="current-no"></h2>
+                <h2 id="unit">PPM</h2>
+            </div>
+            <div class="can-heading">
+                <H2>NO</H2>
+            </div>  
+        </div>
+
+        <div class="items forZ" id="humi">
+            <div class="main-indicator additional" id="indi-humi"></div>
+            <div class="text-container">
+                <h1 id="humi-value" class="temp"></h1> 
+                <h2>%</h2>
+            </div>
+            <div class="heading">
+                <H2>HUMIDITY</H2>
+            </div>        
+        </div>
+
+        <div class="items " id="so2">
+            <div class="main-indicator" id="indi-so2"></div>
+            <canvas id="can-so2"></canvas>
+            <div class="value">
+                <h2 class="currentValue" id="current-so2"></h2>
+                <h2 id="unit">PPM</h2>
+            </div>
+            <div class="can-heading">
+                <H2>SO2</H2>
+            </div>  
+        </div>
+
+        <div class="items " id="no2">
+            <div class="main-indicator" id="indi-no2"></div>
+            <canvas id="can-no2"></canvas>
+            <div class="value">
+                <h2 class="currentValue" id="current-no2"></h2>
+                <h2 id="unit">PPM</h2>
+            </div>
+            <div class="can-heading">
+                <H2>NO2</H2>
+            </div>  
+        </div>
+
+        <div class="items " id="o3">
+            <div class="main-indicator" id="indi-o3"></div>
+            <canvas id="can-o3"></canvas>
+            <div class="value">
+                <h2 class="currentValue" id="current-o3"></h2>
+                <h2 id="unit">PPM</h2>
+            </div>
+            <div class="can-heading">
+                <H2>O3</H2>
+            </div>  
+        </div>
+
+
+        <div class="items " id="nh3">
+            <div class="main-indicator" id="indi-nh3"></div>
+            <canvas id="can-nh3"></canvas>
+            <div class="value">
+                <h2 class="currentValue" id="current-nh3"></h2>
+                <h2 id="unit">PPM</h2>
+            </div>
+            <div class="can-heading">
+                <H2>NH3</H2>
+            </div>  
+        </div>
+
+
+        <div class="items forZ">
+            <div class="main-indicator margintop" id="indi-thermal-comfort"></div>
+            <div class="rec quality">
+                <H3 id="thermal-comfort"></H3>
+            </div>
+
+            <div class="heading">                
+                <H2 style="bottom: 0;">THERMAL COMFORT</H2>
+            </div>
+        </div>
+
+        <div class="items " id="vps">
+            <div class="main-indicator" id="indi-vps"></div>
+            <canvas id="can-vps"></canvas>
+            <div class="value">
+                <h2 class="currentValue" id="current-vps"></h2>
+                <h2 id="unit">%</h2>
+            </div>
+            <div class="can-heading">
+                <H2>VIRUS PROBABILITY SCORE</H2>
+            </div>  
+        </div>
+
+        <div class="items forZ">
+            <div class="main-indicator margintop" id="indi-sbs"></div>
+            <div class="rec quality sbs">
+                <H3 id="sbs"></H3>
+            </div>
+
+            <div class="heading">                
+                <H2 style="bottom: 0;">SICK BUILDING SYNDROME</H2>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="footer" class="footer">
+    <div class="indicator">
+        <div class="indi-con">
+            <div class="good"></div>
+            <h4>GOOD</h4>
+        </div>
+        <div class="indi-con">
+            <div class="moderate"></div>
+            <h4>MODERATE</h4>
+        </div>
+        <div class="indi-con">
+            <div class="bad"></div>
+            <h4>BAD</h4>
+        </div>
+    </div>
+    <p>MINSAR - ADIL - NIZAM - ARIF - SHADMAN</p>
+    <div class="powered" style="display:flex">
+        <p style="white-space: nowrap;">Powered by  </p>
+        <P style="color: blue;"> &#160;Team MANAS</P>
+    </div>
+
+</div>
+
+<div class="under-footer">
+    <p id="last-update"></p>
+    <!-- <i class="icon-fullscreen fbtn" id="fullscreen" onclick="fullscreen()"></i> -->
+    <i class="fas fa-expand-alt fbtn" id="fullscreen" onclick="fullscreen()"></i>
+    <!-- <button class="fbtn" >Full Screen</button> -->
+</div>
+    <script src="Details.js"></script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.area-container {
+    /* width: 30%; */
+    background-color: rgb(191, 197, 197);
+    border-radius: 10px;
+    height: 450px;
+    width: 25vw;
+    min-width: 400px;
+}
+
+#main{
+  display: grid;
+  place-items: center;
+  width: 100%;
+  display: none;
+}
+.delete{
+  display: flex;
+}
+
+.btn-more-datails{
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: rgb(24, 6, 6);
+  border: none;
+  box-shadow: 4px 4px 10px #bfc5c5;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.ic{
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 25px;
+  color: red;
+  background-color: #d8d8a8;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.screen{
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.location-heading {
+    width: 90%;
+    height: 50px;
+    background-color: #bfc5c5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    padding: 5px 20px;
+    
+}
+
+
+.parameter {
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+    align-items: center;
+    padding: 5px 10px;
+    /* margin-left: -8px; */
+    background-color: #dfdedd;
+}
+
+.temp p{
+  font-size: 30px;
+}
+.para{
+    font-size: 18px;
+    width: 30%;
+}
+
+.indicator{
+    border-radius: 100%;
+    background-color: red;
+    width: 10px;
+    height: 10px;
+}
+
+.box{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    background-color: #dfdedd;;
+    align-items: center;
+}
+
+.temp{
+    width: 140px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: rgb(189, 189, 189);
+    display: grid;
+    place-items: center;
+}
+
+.all-para{
+    display: grid;
+    place-items: center;
+}
+.para-element{
+    display: flex;
+    justify-content: space-around;
+    /* width: 100%; */
+    width: 100%;
+   
+}
+
+.left-parameter, .right-parameter {
+    display: grid;
+    place-items: center;
+    width: 50%;
+}
+
+.values{
+    display: flex;
+    /* width: 10%; */
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
+}
+.recomendation{
+    display: flex;
+    flex-direction: column;
+}
+
+.recomendation{
+    display: grid;
+    place-items: center;
+    padding: 10px;
+}
+
+.desies-parameter{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+
+/* .icons i{
+    width: 10%;
+} */
+
+.icons{
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    color: rgb(219, 24, 24);   
+    font-size: 25px;
+    background-color: #dfdedd;
+}
+
+
+/* tooltip */
+
+.tooltip {
+    position:relative;
+  }
+  
+  .tooltip .tooltiptext {
+    font-size: 15px;
+    visibility: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 75px;
+    /* background-color: #555; */
+    background-color: rgba(0, 0, 0, 0.808);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0 6px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -40px;
+    opacity: 0;
+    line-height: 16px;
+    font-weight: 500;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.808) transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+      
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .rec-logos{
+    margin-top: 8px;
+    height: 50px;
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-around;
+    padding: 0 5px;
+}
+
+
+
+#main{
+    /* display: grid;
+    grid-template-columns: 31.45% 31.45% 31.45%; */
+    grid-gap: 3rem;
+    display: flex;
+    flex-basis: 30%;
+    place-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: center;
+  
+}
+
+.value{
+  width: 50px;
+}
+
+
+
+  /* add modal */
+
+  /* add device form */
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+#modal {
+    display: none; /* Hidden by default */
+    position:absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height:100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgb(0 0 0 / 65%);
+    z-index: 1111111;
+    scroll-behavior: none;
+    
+  }
+    
+    /* The popup form - hidden by default */
+    .form-popup {
+      display: none;
+      position: fixed;
+      z-index: 9;
+    }
+  
+    .form-popup-on {
+      display: grid;
+      width: 100%;
+      height: 10%;
+      place-items: center;
+      align-items: center;
+      justify-content: center;
+      z-index: 9;
+    }
+    
+    /* Add styles to the form container */
+    .form-container {
+      width: 400px;
+      height: 300px;
+      padding: 10px;
+      background-color: white;
+      border: 1px solid rgb(221, 218, 213);
+      border-radius: 5px;
+      margin-top: 25%;
+  
+    }
+  
+    .form-container h2{
+      font-weight: 600;
+      margin-left: 30px;
+    }
+  
+    .input-container{
+      display: grid;
+      place-items: center;
+      width: 100%;
+      margin-top: 20px;
+      }
+    
+    /* Full-width input fields */
+    .form-container input[type=text], .form-container input[type=password] {
+      width: 75%;
+      padding: 15px;
+      margin-bottom: 25px;
+      border: 1px solid black;
+      border-radius: 5px;
+  
+    }
+    
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+      border : 2px solid #7c8de4;
+      outline: none;
+    }
+    
+    /* Set a style for the submit/login button */
+  
+    
+    /* Add a red background color to the cancel button */
+  
+    .form-container .btn{
+      background-color: white;
+      font-size: 17px;
+      font-weight: 600;
+      outline: none;
+      border: none;
+      right: 0;
+      margin-right: 10px;
+      color: #4158d0;
+    }
+    
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover {
+      opacity: 1;
+    }
+  
+    .save-button{
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 25px;
+    }
+
+
+/* --------------------- */
+
+.nav-bar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* box-shadow: 4px 4px 10px gray; */
+    background-color: #57a8cc;
+}
+
+.added-device{
+  display: grid;
+  width: 100%;
+  place-items: center;
+}
+
+.d-set{
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.co2-container{
+    width: 200px;
+    height: 152px;
+    background-color: greenyellow;
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow : 0px 0px 8px #888888;
+}
+
+.device-name{
+    display: grid;
+    background-color: rgb(39, 39, 39);
+    padding: 5px;
+    color: white;
+    border-radius: 5px 5px 0 0;
+    white-space:nowrap;
+    overflow: hidden;
+}
+
+.dev-id{
+    border-radius: 0;
+    border-top: 1px solid;
+}
+
+.c-data{
+    display: grid;
+    place-items: center;
+    height: 42%;
+    margin-top: 5px;
+}
+
+.add-device{
+    display: flex;
+}
+
+.back-btn{
+  width: 250px;
+  height: 30px;
+  font-size: 2vw;
+  font-weight: 700;
+  color: white;
+  margin-left: 20px;
+}
+
+.adButton {
+    cursor: pointer;
+    width: 135px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    margin-left: 10px;
+    /* box-shadow: 1px 0.5px 0px #888888; */
+    box-shadow: 0px 0.5px 10px 2px #888888;
+    border-radius: 5px;
+    background-color: darkblue;
+    color: white;
+    margin-right: 10px;
+}
+
+
+/* input{
+    width: 120px;
+    height: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border : none;
+    box-shadow: 2px 2px 5px rgb(95, 95, 95);
+    outline: none;
+} */
+
+.d-set{
+    margin: 15px;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: #ddd;
+  }
+  
+#myBar {
+    width: 0%;
+    height: 5px;
+    background-color: #04AA6D;
+  }
+
+.screen{
+  margin-top: 30px;
+}
+  
+
+.sum-screen{
+margin-left: auto;
+margin-right: auto;
+}
+
+.rec-text{
+  padding: 10px;
+}
+
+.dev-list{
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin: 15px 0;
+}
+
+.d-list{
+  width: 200px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.676);
+  display: grid;
+  place-items: center;
+  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.676);
+}
+
+
+.main-screen
+{
+   background-color: #e7e5e5;
+    height: 90vh;
+    margin-top: -12px;
+    background-size:cover;
+    /* overflow: scroll; */
+}
