@@ -32,7 +32,7 @@ function active(time, d){
   // console.log("date = ",date,"Time = ",current_time);
   // console.log("current date = ",date,"current Time = ",time);
   console.log("The time diff = ",date_diff);
-  if(date_diff <= 2){
+  if(date_diff <= 4){
     return 'Active Now';
   }
   else{
