@@ -245,8 +245,8 @@ function apiCall(id, load){
     reported_date = date;
     reported_time = time;
 
-    if(reported_smoke >= 23 || reported_co >= 76){
-      // sendMail()
+    if(reported_smoke >= 500){
+      sendMail()
       console.log("sendMail() function calls");
     }
     if(active_status == 'Active Now'){
